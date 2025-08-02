@@ -1,0 +1,52 @@
+{
+  "name": "01-serveraula",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build",
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases",
+    "test:e2e:watch": "vitest --dir src/http",
+    "test:create-prisma-environment": "npm link ./prisma/vitest-environment-prisma",
+    "test:install-prisma-environment": "npm link vitest-environment-prisma",
+    "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
+    "test:e2e": "vitest run --dir src/http",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "2.2.2",
+    "@types/node": "22.13.1",
+    "@types/supertest": "6.0.2",
+    "@typescript-eslint/eslint-plugin": "8.23.0",
+    "@typescript-eslint/parser": "8.23.0",
+    "@vitest/coverage-v8": "3.0.5",
+    "@vitest/ui": "3.0.5",
+    "globals": "15.14.0",
+    "npm-run-all": "4.1.5",
+    "prisma": "6.4.0",
+    "supertest": "7.0.0",
+    "tsup": "8.3.6",
+    "tsx": "4.19.2",
+    "typescript": "5.7.3",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "3.0.5"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.0.2",
+    "@fastify/jwt": "9.0.4",
+    "@prisma/client": "6.3.1",
+    "@types/bcryptjs": "2.4.6",
+    "bcryptjs": "2.4.3",
+    "dayjs": "1.11.13",
+    "dotenv": "16.4.7",
+    "fastify": "5.2.1",
+    "zod": "3.24.1"
+  }
+}

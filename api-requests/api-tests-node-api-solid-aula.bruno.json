@@ -1,0 +1,17 @@
+{
+  "name": "03-APISolid",
+  "version": "1",
+  "items": [],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "03-APISolid",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ],
+    "size": 0.0015048980712890625,
+    "filesCount": 6
+  }
+}

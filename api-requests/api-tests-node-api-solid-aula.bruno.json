@@ -1,8 +1,173 @@
 {
   "name": "03-APISolid",
   "version": "1",
-  "items": [],
-  "environments": [],
+  "items": [
+    {
+      "type": "http",
+      "name": "Auth User",
+      "filename": "Auth User.bru",
+      "seq": 3,
+      "settings": {},
+      "tags": [],
+      "request": {
+        "url": "{{url}}/sessions",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"email\": \"nando02@example.com\",\n  \"password\": \"123456\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Create Gym",
+      "filename": "Create Gym.bru",
+      "seq": 6,
+      "settings": {},
+      "tags": [],
+      "request": {
+        "url": "{{url}}/gyms",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"title\": \"Acme Corporation\",\n  \"description\": null,\n  \"phone\": \"+1-555-987-6543\",\n  \"latitude\": 40.7128,\n  \"longitude\": -74.0060\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiI4YjY5YzlhNC02ZmJjLTQwNWYtYmQ3Ny0wZGQ2MGQ2ODVmMTMiLCJpYXQiOjE3NDA1MTk3NDYsImV4cCI6MTc0MDUyMDM0Nn0.b3gw2wESyoJvDq9HjTlcOt4t8R3ZoTHsvYlh-2sCaDA"
+          }
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Create User",
+      "filename": "Create User.bru",
+      "seq": 2,
+      "settings": {},
+      "tags": [],
+      "request": {
+        "url": "{{url}}/users",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"name\": \"NandoAdmin\",\n  \"email\": \"nando02@example.com\",\n  \"password\": \"123456\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Me",
+      "filename": "Me.bru",
+      "seq": 5,
+      "settings": {},
+      "tags": [],
+      "request": {
+        "url": "{{url}}/me",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"name\": \"string\",\n  \"email\": \"example13@example.com\",\n  \"password\": \"123456\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOTdmNzkxYS03OGRhLTRiNDAtOTRkYS1jODFlOWNiZjUwZDEiLCJpYXQiOjE3Mzk1NjAxNzQsImV4cCI6MTczOTU2Mzc3NH0.amNLeZl-UGeBwyp5GBQ9WCnTddsnLadXBCR4BLGGX30"
+          }
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Refresh Token",
+      "filename": "Refresh Token.bru",
+      "seq": 4,
+      "settings": {},
+      "tags": [],
+      "request": {
+        "url": "{{url}}/token/refresh",
+        "method": "PATCH",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"email\": \"example14@example.com\",\n  \"password\": \"123456\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "url",
+          "value": "http://localhost:3333",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "Localhost"
+    }
+  ],
   "brunoConfig": {
     "version": "1",
     "name": "03-APISolid",
@@ -11,7 +176,7 @@
       "node_modules",
       ".git"
     ],
-    "size": 0.0015048980712890625,
+    "size": 0.0015077590942382812,
     "filesCount": 6
   }
 }

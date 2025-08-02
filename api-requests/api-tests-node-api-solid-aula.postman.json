@@ -1,8 +1,192 @@
 {
   "info": {
     "name": "03-APISolid",
+    "description": "",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
-  "item": [],
-  "variable": []
+  "item": [
+    {
+      "name": "Auth User",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{url}}/sessions",
+          "protocol": "",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "sessions"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"nando02@example.com\",\n  \"password\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Create Gym",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiQURNSU4iLCJzdWIiOiI4YjY5YzlhNC02ZmJjLTQwNWYtYmQ3Ny0wZGQ2MGQ2ODVmMTMiLCJpYXQiOjE3NDA1MTk3NDYsImV4cCI6MTc0MDUyMDM0Nn0.b3gw2wESyoJvDq9HjTlcOt4t8R3ZoTHsvYlh-2sCaDA",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{url}}/gyms",
+          "protocol": "",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "gyms"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Acme Corporation\",\n  \"description\": null,\n  \"phone\": \"+1-555-987-6543\",\n  \"latitude\": 40.7128,\n  \"longitude\": -74.0060\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Create User",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{url}}/users",
+          "protocol": "",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "users"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"NandoAdmin\",\n  \"email\": \"nando02@example.com\",\n  \"password\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Me",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzOTdmNzkxYS03OGRhLTRiNDAtOTRkYS1jODFlOWNiZjUwZDEiLCJpYXQiOjE3Mzk1NjAxNzQsImV4cCI6MTczOTU2Mzc3NH0.amNLeZl-UGeBwyp5GBQ9WCnTddsnLadXBCR4BLGGX30",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "{{url}}/me",
+          "protocol": "",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "me"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"string\",\n  \"email\": \"example13@example.com\",\n  \"password\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Refresh Token",
+      "event": [],
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "{{url}}/token/refresh",
+          "protocol": "",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "token",
+            "refresh"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"example14@example.com\",\n  \"password\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": "",
+      "type": "default"
+    }
+  ]
 }

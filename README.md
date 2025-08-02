@@ -14,30 +14,57 @@ Este projeto é uma API RESTful desenvolvida em Node.js com TypeScript, utilizan
 * npm ou yarn
 * Docker (opcional, para facilitar setup do banco)
 
+Claro, aqui está o trecho ajustado com os blocos de código separados por etapa:
+
+---
+
 ## 🚀 Como iniciar o projeto
 
-```sh
-# 1. Clone o repositório
-git clone <url-do-repo>
+1. **Clone o repositório**
 
-# 2. Instale as dependências
-npm install
+    ```sh
+    git clone <url-do-repo>
+    ```
 
-# 3. Configure o banco de dados
-Copie .env.example para .env e ajuste conforme necessário.
+2. **Instale as dependências**
 
-# 4. Execute as migrations do Prisma
-npx prisma migrate dev
+    ```sh
+    npm install
+    ```
 
-# 5. Inicie o servidor em modo desenvolvimento
-npm run dev
+3. **Configure o banco de dados**
+    
+    Copie o arquivo `.env.example` para `.env` e ajuste os valores conforme necessário.
 
-# 6. (Opcional) Execute os testes
-npm run test
+4. **Criação do Database (Postgres) com Docker**
 
-# 7. Execute os endpoints da aplicação
-Utilize o arquivo `api-requests/api-tests-node-api-solid-aula.postman.json` no Postman para testar os endpoints.
-```
+    ```sh
+    docker compose up -d
+    ```
+
+5. **Execute as migrations do Prisma**
+
+    ```sh
+    npx prisma migrate dev
+    ```
+
+6. **Inicie o servidor em modo desenvolvimento**
+
+    ```sh
+    npm run dev
+    ```
+
+7. **(Opcional) Execute os testes**
+
+    ```sh
+    npm run test
+    ```
+
+8. **Execute os endpoints da aplicação**
+
+   Utilize o arquivo `api-requests/api-tests-node-api-solid-aula.postman.json` no Postman para testar os endpoints.
+  
+    > Nem todos os endpoints constam no arquivo acima, pois foram validados com scripts automatizados de testes end-to-end.
 ## 📮 Tabela de Endpoints
 
 ### 👤 Usuário

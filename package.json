@@ -3,16 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
-    "start": "node build/server.js",
     "build": "tsup src --out-dir build",
+    
+    "start": "node build/server.js",
+    "migrate:prod": "prisma migrate deploy",
+    "generate:prod": "prisma generate",
+    "start:prod": "npm run generate:prod && npm run migrate:prod && npm start",
+
+    "dev": "tsx watch src/server.ts",
+
+
     "test": "vitest run --dir src/use-cases",
     "test:watch": "vitest --dir src/use-cases",
+    
     "test:e2e:watch": "vitest --dir src/http",
     "test:create-prisma-environment": "npm link ./prisma/vitest-environment-prisma",
     "test:install-prisma-environment": "npm link vitest-environment-prisma",
     "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
     "test:e2e": "vitest run --dir src/http",
+
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui"
   },
